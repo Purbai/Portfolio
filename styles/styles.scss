@@ -56,43 +56,55 @@
         background-color: white;
     }
 }
-
 .header {
-    // @include phone {
-    //         display: none;
-    //     }
-    
-    //     @include desktop {
-    //         display: inline;
+    display: flex;
+    flex-direction: column; 
 
-    //     }
-    &__greet {
+    &__wrapper {
         display: flex;
-        flex-direction: column;
-        font-family: Impact,
-            Haettenschweiler,
-            'Arial Narrow Bold',
-            sans-serif;
+        flex-direction: column; 
+    }
+
+    &__greet {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-weight: 500;
         font-size: 20px;
         line-height: 100%;
-        letter-spacing: 0%;
-        vertical-align: middle;
     }
+
     &__title {
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-weight: 600;
         font-size: 64px;
         line-height: 120%;
-        letter-spacing: 0%;
-        vertical-align: middle;
     }
-    &__img
-    {
-        @include phone {
-            display: none;   
-        }
+
+    &__img {
+        // hide image
+        display: none; 
     }
+}
+
+@include desktop{
+    .header {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .header__wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header__img {
+        display: block;
+        flex: 1;
+        margin-left: 20px;
+        max-width: 100%;
+        height: auto;
+    } 
 }
 .aboutme {
     &__layout {
@@ -149,13 +161,11 @@
             font-family: Inter, sans-serif;
             text-align: center;
             width: 100%;
-
             @include desktop {
                 order: 3;
                 text-align: left;
                 width: auto;
-                align-self: flex-start;
-                max-width: 600px;
+                max-width: calc(100% - devices.$xs);
             }
         }
     }
@@ -164,7 +174,8 @@
     display: flex;
     flex-direction: column;
     width: 100%; 
-    margin: 0px auto; // center horizontally on larger screens
+    // center horizontally on larger screens
+    margin: 0px auto; 
     &__header {
         font-family: Inter;
         font-weight: 600;

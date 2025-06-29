@@ -35,30 +35,49 @@
   background-color: white;
 }
 
-.header__greet {
+.header {
   display: flex;
   flex-direction: column;
+}
+.header__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.header__greet {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 100%;
-  letter-spacing: 0%;
-  vertical-align: middle;
 }
 .header__title {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-weight: 600;
   font-size: 64px;
   line-height: 120%;
-  letter-spacing: 0%;
-  vertical-align: middle;
 }
-@media only screen and (max-width: 428px) {
-  .header__img {
-    display: none;
-  }
+.header__img {
+  display: none;
 }
 
+@media only screen and (min-width: 429px) and (max-width: 1728px) {
+  .header {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .header__wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .header__img {
+    display: block;
+    flex: 1;
+    margin-left: 20px;
+    max-width: 100%;
+    height: auto;
+  }
+}
 .aboutme__layout {
   display: flex;
   flex-direction: column;
@@ -124,8 +143,7 @@
     order: 3;
     text-align: left;
     width: auto;
-    align-self: flex-start;
-    max-width: 600px;
+    max-width: calc(100% - 428px);
   }
 }
 
