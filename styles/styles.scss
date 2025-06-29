@@ -1,0 +1,277 @@
+@use './devices.scss';
+
+@mixin phone {
+
+    // for screens 428px or smaller
+    @media only screen and (max-width: devices.$xs) {
+        @content;
+    }
+}
+
+@mixin desktop {
+
+    // for screens 
+    @media only screen and (min-width: (devices.$xs + 1px)) and (max-width: devices.$lg) {
+        @content;
+    }
+}
+
+.navbar {
+
+    @include phone {
+        display: none;
+    }
+
+    @include desktop {
+        display: inline;
+         width: 483px;
+         height: 45px;
+    }
+    &__name {
+        width: 122px;
+        height: 26px;
+        top: 57px;
+        left: 149px;
+        font-family: DM Sans;
+        font-weight: 700;
+        font-size: 23px;
+        line-height: 25px;
+        letter-spacing: 0px;
+    }
+    &__menu{
+        // width: 730px;
+        // height: 45px;
+        &--right {
+            float: right;
+        }
+    }
+    button {
+        width: 145px;
+        height: 45px;
+        top: 47px;
+        left: 1434px;
+        gap: 10px;
+        border-radius: 7px;
+        border-width: 1px;
+        background-color: white;
+    }
+}
+
+.header {
+    // @include phone {
+    //         display: none;
+    //     }
+    
+    //     @include desktop {
+    //         display: inline;
+
+    //     }
+    &__greet {
+        display: flex;
+        flex-direction: column;
+        font-family: Impact,
+            Haettenschweiler,
+            'Arial Narrow Bold',
+            sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        vertical-align: middle;
+    }
+    &__title {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-weight: 600;
+        font-size: 64px;
+        line-height: 120%;
+        letter-spacing: 0%;
+        vertical-align: middle;
+    }
+    &__img
+    {
+        @include phone {
+            display: none;   
+        }
+    }
+}
+.aboutme {
+    &__layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        @include desktop {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 40px;
+        }
+    }
+    &__title {
+        order: 1;
+        font-size: 32px;
+        font-weight: 600;
+        font-family: Inter, sans-serif;
+        text-align: center;
+        letter-spacing: 0%;
+        width: 100%;
+
+        @include desktop {
+            order: 2;
+            text-align: left;
+            flex-direction: column;
+            width: auto;
+            align-self: flex-start;
+        }
+    }
+    &__profile {
+        order: 2;
+        width: 100%;
+        max-width: 299px;
+        height: auto;
+        object-fit: cover;
+
+        @include desktop {
+            order: 1;
+            flex: 0 0 299px;
+        }
+    }
+    &__text{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.8;
+        &--wrapper {
+            order: 3;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-family: Inter, sans-serif;
+            text-align: center;
+            width: 100%;
+
+            @include desktop {
+                order: 3;
+                text-align: left;
+                width: auto;
+                align-self: flex-start;
+                max-width: 600px;
+            }
+        }
+    }
+}
+.techskills {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    margin: 0px auto; // center horizontally on larger screens
+    &__header {
+        font-family: Inter;
+        font-weight: 600;
+        font-size: 32px;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+    &__text {
+        font-family: Inter;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    &__skills {
+        display: grid;
+        @include phone {
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 1px;
+            img {
+                width: 20% vw;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        @include desktop {
+            grid-template-columns: repeat(9, 1fr); 
+            justify-content: center; 
+            gap: 20px;
+            img {
+                width: 30% vw ;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        &--text {
+            font-family: Inter;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 100%;
+            text-align: center;
+            margin-top: 6px;
+        }
+    } 
+}
+.project {
+    // @include phone {
+    //         display: flex;
+    //     }
+    
+    //     @include desktop {
+    //         display: flex;
+
+    //     }
+    width: 440px;
+    height: 580px;
+    &__card{
+        &--circle {
+            width: 5.5px;
+            height: 66px;
+            top: 93.29px;
+            left: 53.58px;
+            border-radius: 32.49px;
+            background-color: rgba(62, 233, 79, 1);
+        }
+        &--img{
+            width: 298px;
+            height: 195px;
+            top: 109px;
+            left: 39px;
+        }
+    }
+     
+}
+.footer {
+    &__layout {
+        display: flex;
+        width: 100vw;
+        background: rgba(0, 0, 0, 1);    
+        @include phone {
+            flex-direction: column-reverse; // icons above text on mobile
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        @include desktop {
+            flex-direction: row; // one line on desktop
+            align-items: center;
+            justify-content:center;
+            gap: 20px;
+        }  
+    } 
+    &__text {
+        font-family: Inter;
+        font-weight: 400;
+        font-size: 18px;
+        color: white;
+        line-height: 180%;
+        letter-spacing: 0%;
+    }
+    &__icons {
+        gap: 10px;
+        &--iconsize {
+            width: 25px;
+            height: 25px;       
+        }
+    }
+}
