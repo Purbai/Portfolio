@@ -1,4 +1,5 @@
 @use './devices.scss';
+@use './mixins.scss';
 
 @mixin phone {
 
@@ -17,30 +18,21 @@
 }
 
 .navbar {
-
     @include phone {
         display: none;
     }
-
     @include desktop {
         display: inline;
-         width: 483px;
-         height: 45px;
+        width: 483px;
+        height: 45px;
     }
     &__name {
         width: 122px;
         height: 26px;
-        top: 57px;
-        left: 149px;
-        font-family: DM Sans;
-        font-weight: 700;
-        font-size: 23px;
-        line-height: 25px;
+        @include mixins.sizing-mod(23px, DM Sans, 700, 25px);
         letter-spacing: 0px;
     }
     &__menu{
-        // width: 730px;
-        // height: 45px;
         &--right {
             float: right;
         }
@@ -48,8 +40,6 @@
     button {
         width: 145px;
         height: 45px;
-        top: 47px;
-        left: 1434px;
         gap: 10px;
         border-radius: 7px;
         border-width: 1px;
@@ -59,32 +49,21 @@
 .header {
     display: flex;
     flex-direction: column; 
-
     &__wrapper {
         display: flex;
         flex-direction: column; 
     }
-
-    &__greet {
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 100%;
+    &__greeting {
+        @include mixins.sizing-mod(20px, Impact, 500, 100%);
     }
-
-    &__title {
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-weight: 600;
-        font-size: 64px;
-        line-height: 120%;
+    &__description {
+        @include mixins.sizing-mod(64px, Impact, 600, 120%);
     }
-
     &__img {
         // hide image
         display: none; 
     }
 }
-
 @include desktop{
     .header {
         flex-direction: row;
@@ -103,7 +82,7 @@
         flex: 1;
         margin-left: 20px;
         max-width: 100%;
-        height: auto;
+        height: 100%;
     } 
 }
 .aboutme {
@@ -122,11 +101,8 @@
     }
     &__title {
         order: 1;
-        font-size: 32px;
-        font-weight: 600;
-        font-family: Inter, sans-serif;
+        @include mixins.sizing-mod(32px, Inter, 600, 100%);
         text-align: center;
-        letter-spacing: 0%;
         width: 100%;
 
         @include desktop {
@@ -143,7 +119,6 @@
         max-width: 299px;
         height: auto;
         object-fit: cover;
-
         @include desktop {
             order: 1;
             flex: 0 0 299px;
@@ -152,7 +127,7 @@
     &__text{
         font-size: 18px;
         font-weight: 400;
-        line-height: 1.8;
+        line-height: 180%;
         &--wrapper {
             order: 3;
             display: flex;
@@ -177,16 +152,12 @@
     // center horizontally on larger screens
     margin: 0px auto; 
     &__header {
-        font-family: Inter;
-        font-weight: 600;
-        font-size: 32px;
+        @include mixins.sizing-mod(32px, Inter, 600, 100%);
         text-align: center;
         margin-bottom: 12px;
     }
     &__text {
-        font-family: Inter;
-        font-weight: 400;
-        font-size: 16px;
+        @include mixins.sizing-mod(16px, Inter, 600, 100%);
         text-align: center;
         margin-bottom: 20px;
     }
@@ -214,43 +185,66 @@
             }
         }
         &--text {
-            font-family: Inter;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 100%;
+            @include mixins.sizing-mod(16px, Inter, 500, 100%);
             text-align: center;
             margin-top: 6px;
         }
     } 
 }
 .project {
-    // @include phone {
-    //         display: flex;
-    //     }
-    
-    //     @include desktop {
-    //         display: flex;
-
-    //     }
-    width: 440px;
-    height: 580px;
-    &__card{
-        &--circle {
-            width: 5.5px;
-            height: 66px;
-            top: 93.29px;
-            left: 53.58px;
-            border-radius: 32.49px;
-            background-color: rgba(62, 233, 79, 1);
+    display: flex;
+    flex-direction: column;
+    &__header{
+        @include mixins.sizing-mod(32px, Inter, 600, 100%);
+        text-align: center;
+    }
+    &__layout{
+        display: grid;
+        @include phone {
+            grid-template-columns: 1fr;
+            gap: 1px;
         }
-        &--img{
-            width: 298px;
-            height: 195px;
-            top: 109px;
-            left: 39px;
+        @include desktop {
+            grid-template-columns: repeat(2, 2fr);
+            justify-content: center;
+            gap: 20px;
         }
     }
-     
+    &__card {
+        display: flex;
+        // stack on top of each other
+        flex-direction: column;
+        align-items: center;
+        @include phone {
+            width: 90vw;
+        }
+    }
+    &__img {
+        width: 100%;
+        img {
+            width: 100%;
+            display: block;
+        }   
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        &--tech {
+            @include mixins.sizing-mod(16px,Inter,600, 100%);
+        }
+        &--title{
+            @include mixins.sizing-mod(38px, Inter, 600, 100%);
+        }
+        &--text{
+            @include mixins.sizing-mod(18px, Inter, 400, 160%);
+        }
+        &--btn{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            gap: 20px;
+        }
+    }
 }
 .footer {
     &__layout {
@@ -271,12 +265,8 @@
         }  
     } 
     &__text {
-        font-family: Inter;
-        font-weight: 400;
-        font-size: 18px;
+        @include mixins.sizing-mod(18px, Inter, 400, 180%);
         color: white;
-        line-height: 180%;
-        letter-spacing: 0%;
     }
     &__icons {
         gap: 10px;

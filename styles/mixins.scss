@@ -14,6 +14,9 @@
 }
 
 // @mixin mixin-name($placeholder, ...) {}
-@mixin sizing-mod($size) {
-    font-size: $size;
+@mixin sizing-mod($fsize, $ffamily, $fweight, $lheight) {
+    font-size: $fsize;
+    font-family: $ffamily;
+    font-weight: $fweight;
+    line-height: $lheight;
 }
