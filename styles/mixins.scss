@@ -1,19 +1,4 @@
 // @mixin mixin-name($placeholder, ...) {}
-@mixin sizing-modifier($sm, $md: 24px, $lg) {
-    &--sm {
-        font-size: $sm;
-    }
-
-    &--md {
-        font-size: $md;
-    }
-
-    &--lg {
-        font-size: $lg;
-    }
-}
-
-// @mixin mixin-name($placeholder, ...) {}
 @mixin sizing-mod($fsize, $ffamily, $fweight, $lheight) {
     font-size: $fsize;
     font-family: $ffamily;

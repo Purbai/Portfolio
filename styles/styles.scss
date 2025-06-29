@@ -12,7 +12,10 @@
 @mixin desktop {
 
     // for screens 
-    @media only screen and (min-width: (devices.$xs + 1px)) and (max-width: devices.$lg) {
+    // @media only screen and (min-width: (devices.$xs + 1px)) and (max-width: devices.$lg) {
+    //     @content;
+    // }
+    @media only screen and (min-width: (devices.$xs + 1px)) {
         @content;
     }
 }
@@ -194,6 +197,7 @@
 .project {
     display: flex;
     flex-direction: column;
+    gap:25px;
     &__header{
         @include mixins.sizing-mod(32px, Inter, 600, 100%);
         text-align: center;
@@ -212,6 +216,8 @@
     }
     &__card {
         display: flex;
+        height: 580px;
+        width: 373px;
         // stack on top of each other
         flex-direction: column;
         align-items: center;
@@ -221,8 +227,14 @@
     }
     &__img {
         width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+        background-color: paleturquoise;
         img {
-            width: 100%;
+            width: 90%;
+            height: auto;
             display: block;
         }   
     }

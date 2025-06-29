@@ -3,7 +3,7 @@
     display: none;
   }
 }
-@media only screen and (min-width: 429px) and (max-width: 1728px) {
+@media only screen and (min-width: 429px) {
   .navbar {
     display: inline;
     width: 483px;
@@ -55,7 +55,7 @@
   display: none;
 }
 
-@media only screen and (min-width: 429px) and (max-width: 1728px) {
+@media only screen and (min-width: 429px) {
   .header {
     flex-direction: row;
     align-items: flex-start;
@@ -81,7 +81,7 @@
   gap: 20px;
   padding: 20px;
 }
-@media only screen and (min-width: 429px) and (max-width: 1728px) {
+@media only screen and (min-width: 429px) {
   .aboutme__layout {
     flex-direction: row;
     align-items: flex-start;
@@ -98,7 +98,7 @@
   text-align: center;
   width: 100%;
 }
-@media only screen and (min-width: 429px) and (max-width: 1728px) {
+@media only screen and (min-width: 429px) {
   .aboutme__title {
     order: 2;
     text-align: left;
@@ -114,7 +114,7 @@
   height: auto;
   object-fit: cover;
 }
-@media only screen and (min-width: 429px) and (max-width: 1728px) {
+@media only screen and (min-width: 429px) {
   .aboutme__profile {
     order: 1;
     flex: 0 0 299px;
@@ -134,7 +134,7 @@
   text-align: center;
   width: 100%;
 }
-@media only screen and (min-width: 429px) and (max-width: 1728px) {
+@media only screen and (min-width: 429px) {
   .aboutme__text--wrapper {
     order: 3;
     text-align: left;
@@ -180,7 +180,7 @@
     margin: 0 auto;
   }
 }
-@media only screen and (min-width: 429px) and (max-width: 1728px) {
+@media only screen and (min-width: 429px) {
   .techskills__skills {
     grid-template-columns: repeat(9, 1fr);
     justify-content: center;
@@ -205,6 +205,7 @@
 .project {
   display: flex;
   flex-direction: column;
+  gap: 25px;
 }
 .project__header {
   font-size: 32px;
@@ -222,7 +223,7 @@
     gap: 1px;
   }
 }
-@media only screen and (min-width: 429px) and (max-width: 1728px) {
+@media only screen and (min-width: 429px) {
   .project__layout {
     grid-template-columns: repeat(2, 2fr);
     justify-content: center;
@@ -231,6 +232,8 @@
 }
 .project__card {
   display: flex;
+  height: 580px;
+  width: 373px;
   flex-direction: column;
   align-items: center;
 }
@@ -241,9 +244,15 @@
 }
 .project__img {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  background-color: paleturquoise;
 }
 .project__img img {
-  width: 100%;
+  width: 90%;
+  height: auto;
   display: block;
 }
 .project__content {
@@ -288,7 +297,7 @@
     gap: 12px;
   }
 }
-@media only screen and (min-width: 429px) and (max-width: 1728px) {
+@media only screen and (min-width: 429px) {
   .footer__layout {
     flex-direction: row;
     align-items: center;
