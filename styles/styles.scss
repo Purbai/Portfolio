@@ -261,18 +261,20 @@
 .footer {
     &__layout {
         display: flex;
-        width: 100vw;
+        width: 100%;
         background: rgba(0, 0, 0, 1);    
         @include phone {
-            flex-direction: column-reverse; // icons above text on mobile
+            // reverse and stacked
+            flex-direction: column-reverse;
             align-items: center;
             justify-content: center;
             gap: 12px;
         }
         @include desktop {
-            flex-direction: row; // one line on desktop
+            // all on the same row
+            flex-direction: row;
             align-items: center;
-            justify-content:center;
+            justify-content:space-between;
             gap: 20px;
         }  
     } 
