@@ -25,8 +25,12 @@
         display: none;
     }
     @include desktop {
-        display: inline;
-        width: 483px;
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
         height: 45px;
     }
     &__name {
@@ -36,14 +40,21 @@
         letter-spacing: 0px;
     }
     &__menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        align-items: right;
         &--right {
-            float: right;
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
         }
     }
     button {
         width: 145px;
         height: 45px;
-        gap: 10px;
         border-radius: 7px;
         border-width: 1px;
         background-color: white;
