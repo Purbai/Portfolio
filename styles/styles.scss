@@ -36,7 +36,7 @@
     &__name {
         width: 122px;
         height: 26px;
-        @include mixins.sizing-mod(23px, DM Sans, 700, 25px);
+        @include mixins.sizing-fontmod(23px, DM Sans, 700, 25px);
         letter-spacing: 0px;
     }
     &__menu{
@@ -68,10 +68,10 @@
         flex-direction: column; 
     }
     &__greeting {
-        @include mixins.sizing-mod(20px, Impact, 500, 100%);
+        @include mixins.sizing-fontmod(20px, Impact, 500, 100%);
     }
     &__description {
-        @include mixins.sizing-mod(64px, Impact, 600, 120%);
+        @include mixins.sizing-fontmod(64px, Impact, 600, 120%);
     }
     &__img {
         // hide image
@@ -113,37 +113,57 @@
             gap: 40px;
         }
     }
+    &__profile1 {
+        display: none;
+    
+        @include desktop {
+            display: block;
+            width: 299px;
+            height: auto;
+            object-fit: cover;
+            margin-right: 40px;
+        }
+    }
+    
+    &__profile2 {
+        width: 100%;
+        max-width: 299px;
+        height: auto;
+        object-fit: cover;
+    
+        @include desktop {
+            display: none;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+            
+        @include desktop {
+            align-items: flex-start;
+        }
+    }
     &__title {
-        order: 1;
-        @include mixins.sizing-mod(32px, Inter, 600, 100%);
+        @include mixins.sizing-fontmod(32px, Inter, 600, 100%);
         text-align: center;
         width: 100%;
 
         @include desktop {
-            order: 2;
             text-align: left;
             flex-direction: column;
             width: auto;
             align-self: flex-start;
         }
     }
-    &__profile {
-        order: 2;
-        width: 100%;
-        max-width: 299px;
-        height: auto;
-        object-fit: cover;
-        @include desktop {
-            order: 1;
-            flex: 0 0 299px;
-        }
-    }
+
     &__text{
         font-size: 18px;
         font-weight: 400;
         line-height: 180%;
         &--wrapper {
-            order: 3;
             display: flex;
             flex-direction: column;
             gap: 12px;
@@ -151,7 +171,6 @@
             text-align: center;
             width: 100%;
             @include desktop {
-                order: 3;
                 text-align: left;
                 width: auto;
                 max-width: calc(100% - devices.$xs);
@@ -166,12 +185,12 @@
     // center horizontally on larger screens
     margin: 0px auto; 
     &__header {
-        @include mixins.sizing-mod(32px, Inter, 600, 100%);
+        @include mixins.sizing-fontmod(32px, Inter, 600, 100%);
         text-align: center;
         margin-bottom: 12px;
     }
     &__text {
-        @include mixins.sizing-mod(16px, Inter, 600, 100%);
+        @include mixins.sizing-fontmod(16px, Inter, 600, 100%);
         text-align: center;
         margin-bottom: 20px;
     }
@@ -199,7 +218,7 @@
             }
         }
         &--text {
-            @include mixins.sizing-mod(16px, Inter, 500, 100%);
+            @include mixins.sizing-fontmod(16px, Inter, 500, 100%);
             text-align: center;
             margin-top: 6px;
         }
@@ -210,7 +229,7 @@
     flex-direction: column;
     gap:25px;
     &__header{
-        @include mixins.sizing-mod(32px, Inter, 600, 100%);
+        @include mixins.sizing-fontmod(32px, Inter, 600, 100%);
         text-align: center;
     }
     &__layout{
@@ -253,13 +272,13 @@
         display: flex;
         flex-direction: column;
         &--tech {
-            @include mixins.sizing-mod(16px,Inter,600, 100%);
+            @include mixins.sizing-fontmod(16px,Inter,600, 100%);
         }
         &--title{
-            @include mixins.sizing-mod(38px, Inter, 600, 100%);
+            @include mixins.sizing-fontmod(38px, Inter, 600, 100%);
         }
         &--text{
-            @include mixins.sizing-mod(18px, Inter, 400, 160%);
+            @include mixins.sizing-fontmod(18px, Inter, 400, 160%);
         }
         &--btn{
             display: flex;
@@ -286,11 +305,12 @@
             flex-direction: row;
             align-items: center;
             justify-content:space-between;
+            padding: 40px;
             gap: 20px;
         }  
     } 
     &__text {
-        @include mixins.sizing-mod(18px, Inter, 400, 180%);
+        @include mixins.sizing-fontmod(18px, Inter, 400, 180%);
         color: white;
     }
     &__icons {

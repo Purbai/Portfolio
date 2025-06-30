@@ -1,5 +1,5 @@
 // @mixin mixin-name($placeholder, ...) {}
-@mixin sizing-mod($fsize, $ffamily, $fweight, $lheight) {
+@mixin sizing-fontmod($fsize, $ffamily, $fweight, $lheight) {
     font-size: $fsize;
     font-family: $ffamily;
     font-weight: $fweight;

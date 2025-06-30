@@ -102,8 +102,42 @@
     gap: 40px;
   }
 }
+.aboutme__profile1 {
+  display: none;
+}
+@media only screen and (min-width: 429px) {
+  .aboutme__profile1 {
+    display: block;
+    width: 299px;
+    height: auto;
+    object-fit: cover;
+    margin-right: 40px;
+  }
+}
+.aboutme__profile2 {
+  width: 100%;
+  max-width: 299px;
+  height: auto;
+  object-fit: cover;
+}
+@media only screen and (min-width: 429px) {
+  .aboutme__profile2 {
+    display: none;
+  }
+}
+.aboutme__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+@media only screen and (min-width: 429px) {
+  .aboutme__content {
+    align-items: flex-start;
+  }
+}
 .aboutme__title {
-  order: 1;
   font-size: 32px;
   font-family: Inter;
   font-weight: 600;
@@ -113,24 +147,10 @@
 }
 @media only screen and (min-width: 429px) {
   .aboutme__title {
-    order: 2;
     text-align: left;
     flex-direction: column;
     width: auto;
     align-self: flex-start;
-  }
-}
-.aboutme__profile {
-  order: 2;
-  width: 100%;
-  max-width: 299px;
-  height: auto;
-  object-fit: cover;
-}
-@media only screen and (min-width: 429px) {
-  .aboutme__profile {
-    order: 1;
-    flex: 0 0 299px;
   }
 }
 .aboutme__text {
@@ -139,7 +159,6 @@
   line-height: 180%;
 }
 .aboutme__text--wrapper {
-  order: 3;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -149,7 +168,6 @@
 }
 @media only screen and (min-width: 429px) {
   .aboutme__text--wrapper {
-    order: 3;
     text-align: left;
     width: auto;
     max-width: calc(100% - 428px);
@@ -315,6 +333,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding: 40px;
     gap: 20px;
   }
 }
