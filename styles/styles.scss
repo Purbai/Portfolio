@@ -256,9 +256,11 @@
     }
     &__img {
         width: 100%;
+        position: relative;
         display: flex;
         justify-content: center;
-        align-items: center;
+        // align-items: center;
+        align-items: flex-start;
         padding-top: 20px;
         background-color: paleturquoise;
         img {
@@ -266,6 +268,33 @@
             height: auto;
             display: block;
         }   
+    }
+    &__btn {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+            -index: 2;
+    }
+    &__btn--red,
+    &__btn--amber,
+    &__btn--green {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+    &__btn--red {
+        background-color: rgba(236, 92, 92, 1);
+    }
+    
+    &__btn--amber {
+        background-color: rgba(255, 219, 125, 1);
+    }
+    
+    &__btn--green {
+        background-color: rgba(62, 233, 79, 1);     
     }
     &__content{
         display: flex;
