@@ -187,7 +187,6 @@
     &__header {
         @include mixins.sizing-fontmod(32px, Inter, 600, 100%);
         text-align: center;
-        margin-bottom: 12px;
     }
     &__text {
         @include mixins.sizing-fontmod(16px, Inter, 600, 100%);
