@@ -244,9 +244,10 @@
         }
     }
     &__card {
+        gap:15px;
         display: flex;
-        height: 580px;
-        width: 373px;
+        height: 50%;
+        width: 600px;
         // stack on top of each other
         flex-direction: column;
         align-items: center;
@@ -267,7 +268,7 @@
             width: 90%;
             height: auto;
             display: block;
-        }   
+        }  
     }
     &__btn {
         position: absolute;
@@ -297,6 +298,7 @@
         background-color: rgba(62, 233, 79, 1);     
     }
     &__content{
+        gap:10px;
         display: flex;
         flex-direction: column;
         &--tech {
