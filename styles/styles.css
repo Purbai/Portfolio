@@ -284,7 +284,7 @@
 }
 .project__img img {
   width: 90%;
-  height: auto;
+  height: 95%;
   display: block;
 }
 .project__btn {
@@ -342,6 +342,7 @@
 
 .footer__layout {
   display: flex;
+  margin-top: 10px;
   width: 100%;
   background: rgb(0, 0, 0);
 }

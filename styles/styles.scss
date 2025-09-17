@@ -266,7 +266,7 @@
         background-color: paleturquoise;
         img {
             width: 90%;
-            height: auto;
+            height: 95%;
             display: block;
         }  
     }
@@ -321,6 +321,7 @@
 .footer {
     &__layout {
         display: flex;
+        margin-top: 10px;
         width: 100%;
         background: rgba(0, 0, 0, 1);    
         @include phone {
