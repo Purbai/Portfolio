@@ -108,15 +108,16 @@
 @media only screen and (min-width: 429px) {
   .aboutme__profile1 {
     display: block;
-    width: 299px;
+    width: 399px;
     height: auto;
     object-fit: cover;
-    margin-right: 40px;
+    margin-right: 20px;
+    margin-left: 40px;
   }
 }
 .aboutme__profile2 {
   width: 100%;
-  max-width: 299px;
+  max-width: 399px;
   height: auto;
   object-fit: cover;
 }
